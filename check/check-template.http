@@ -1,0 +1,9 @@
+@base_url = 
+
+### Get a word definition
+GET {{base_url}}/words/check
+Authorization: Bearer xxxx
+Content-Type: application/json
+X-Mashape-Key: 
+X-Mashape-Host: 
+

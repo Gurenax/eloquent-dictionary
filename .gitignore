@@ -27,4 +27,4 @@ yarn-error.log*
 .env.test
 
 # check folder
-check
+check/1.http

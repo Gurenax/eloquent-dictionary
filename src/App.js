@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 // import logo from './logo.svg';
-
+import fetchWord from './api/words'
 import SearchBar from './components/SearchBar'
-
+import Result from './components/Result'
 import './App.css'
 
 class App extends Component {
   state = {
-    word: ''
+    word: '',
+    result: null
   }
 
   onWordChange = event => {
@@ -17,18 +18,27 @@ class App extends Component {
     })
   }
 
-  onWordSearch = event => {
-    console.log('Clicked!')
+  onWordSearch = async event => {
+    const { word } = this.state
+    const response = await fetchWord(word)
+    const data = response.data
+    this.setState({
+      result: data
+    })
   }
 
   render() {
-    const { word } = this.state
+    const { word, result } = this.state
 
     return (
       <div className="App">
         <h1>Eloquent Dictionary</h1>
-        <SearchBar word={word} onInputChange={this.onWordChange} onButtonClick={this.onWordSearch} />
-        {/* Result */}
+        <SearchBar
+          word={word}
+          onInputChange={this.onWordChange}
+          onButtonClick={this.onWordSearch}
+        />
+        <Result data={result}/>
       </div>
     )
   }

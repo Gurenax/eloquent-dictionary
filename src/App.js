@@ -8,27 +8,38 @@ import './App.css'
 class App extends Component {
   state = {
     word: '',
-    result: null
+    result: null,
+    error: null
   }
 
   onWordChange = event => {
     const { value } = event.target
     this.setState({
-      word: value
+      word: value,
+      error: null
     })
   }
 
   onWordSearch = async event => {
-    const { word } = this.state
-    const response = await fetchWord(word)
-    const data = response.data
-    this.setState({
-      result: data
-    })
+    try {
+      const { word } = this.state
+      const response = await fetchWord(word)
+      const data = response.data
+      this.setState({
+        result: data,
+        error: null
+      })
+    }
+    catch(error) {
+      this.setState({
+        result: null,
+        error: error
+      })
+    }
   }
 
   render() {
-    const { word, result } = this.state
+    const { word, result, error } = this.state
 
     return (
       <div className="App">
@@ -37,7 +48,7 @@ class App extends Component {
           onInputChange={this.onWordChange}
           onSearchAction={this.onWordSearch}
         />
-        <Result data={result} />
+        <Result data={result} error={error} />
       </div>
     )
   }

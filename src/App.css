@@ -1,6 +1,17 @@
 .App {
   text-align: center;
 }
+
+/*
+* Override bootstrap input glow
+*/
+input[type='text'],
+textarea {
+  outline: none;
+  box-shadow: none !important;
+  border: 1px solid #ccc !important;
+}
+
 /* 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;

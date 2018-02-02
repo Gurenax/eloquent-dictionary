@@ -31,14 +31,13 @@ class App extends Component {
     const { word, result } = this.state
 
     return (
-      <div className="container-fluid">
-        <h1>Eloquent Dictionary</h1>
+      <div className="App">
         <SearchBar
           word={word}
           onInputChange={this.onWordChange}
-          onButtonClick={this.onWordSearch}
+          onSearchAction={this.onWordSearch}
         />
-        <Result data={result}/>
+        <Result data={result} />
       </div>
     )
   }

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Result = ({ data, error }) => (
-  <div className="container">
+  <div className="container mt-3">
     {!error ? (
       !!data ? (
       <div>
@@ -37,7 +37,7 @@ const Result = ({ data, error }) => (
                     <p>{result.similarTo.join(', ')}</p>
                   </p>
                 )}
-                {!!result.similarTo && (
+                {!!result.examples && (
                   <p>
                     <strong>examples</strong>
                     <p>{result.examples.join(', ')}</p>

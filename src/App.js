@@ -31,7 +31,7 @@ class App extends Component {
     const { word, result } = this.state
 
     return (
-      <div className="App">
+      <div className="container-fluid">
         <h1>Eloquent Dictionary</h1>
         <SearchBar
           word={word}

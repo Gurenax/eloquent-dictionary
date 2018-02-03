@@ -15,3 +15,8 @@ A simple dictionary app built on React and Words API.
 - `data` - the result data from the API
 - `error` - the error returned from calling the API
 
+## Deployment
+### Netlify
+- Build command - `npm install && npm run build`
+- Publish directory - `build`
+- Build environment variables - refer to .env file

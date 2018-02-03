@@ -59,7 +59,7 @@ class App extends Component {
           onInputChange={this.onWordChange}
           onSearchAction={this.onWordSearch}
         />
-        <Result data={result} error={error} />
+        <Result word={word} data={result} error={error} />
       </div>
     )
   }

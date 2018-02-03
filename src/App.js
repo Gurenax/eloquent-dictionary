@@ -6,12 +6,21 @@ import Result from './components/Result'
 import './App.css'
 
 class App extends Component {
+  /*
+  * App State
+  * word - String - Input from User
+  * result - Object - Data from Words API
+  * error - Object - Error returned from calling Words API
+  */
   state = {
     word: '',
     result: null,
     error: null
   }
 
+  /*
+  * Handles word input event
+  */
   onWordChange = event => {
     const { value } = event.target
     this.setState({
@@ -20,6 +29,9 @@ class App extends Component {
     })
   }
 
+  /*
+  * Handles search event for the input word
+  */
   onWordSearch = async event => {
     try {
       const { word } = this.state
@@ -29,8 +41,7 @@ class App extends Component {
         result: data,
         error: null
       })
-    }
-    catch(error) {
+    } catch (error) {
       this.setState({
         result: null,
         error: error

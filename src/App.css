@@ -23,3 +23,7 @@ textarea {
 .partOfSpeech {
   color: #828282;
 }
+
+.responsiveHello {
+  font-size: 6.5vw;
+}

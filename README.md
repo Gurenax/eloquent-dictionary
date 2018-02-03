@@ -12,6 +12,7 @@ A simple dictionary app built on React and Words API.
 - `onSearchAction` - event when the search is executed
 
 ### Result
+- `word` - the search input
 - `data` - the result data from the API
 - `error` - the error returned from calling the API
 

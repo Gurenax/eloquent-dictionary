@@ -2,9 +2,10 @@ import React from 'react'
 import { Icon } from 'react-fa'
 
 const SearchBar = ({ word, onInputChange, onSearchAction }) => (
-  <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav className="navbar navbar-expand navbar-dark bg-dark">
+    <a class="navbar-brand" href="/"><Icon name="book" /></a>
     <form
-      className="container"
+      className="form-inline d-inline w-100"
       role="search"
       onSubmit={event => {
         event.preventDefault()
